@@ -5,9 +5,18 @@
 /* Element Selectors */
 
 /* Class Selectors */
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 .custom-header {
     background-color: blue;
     padding: 15px 0 5px 0;
+    font-size: 35px; 
 }
 
 .custom-line-height {
@@ -19,8 +28,28 @@
     margin-top: 10px;
 }
 
+.custom-text {
+    font-size:30px;
+}
 
+.custom-search {
+    padding: 10px;
+}
+
+.custom-five-day {
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.day {
+    background-color: darkblue;
+}
 /* ID Selectors */
+#uvIndex {
+    background-color: red;
+    padding: 5px;
+    color: white;
+}
 
 
 /* Media Queries */

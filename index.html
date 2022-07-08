@@ -24,12 +24,13 @@
     </div>
   </header>
 
+  <!-- search and previous locations/searches -->
   <main class="container-fluid">
     <div class="row">
       <div class="col-3">
-        <div class="font-weight-bold custom-border">Search for a City</div>
+        <div class="font-weight-bold custom-border custom-text">Search for a City</div>
         <div>
-          <input id="search-input" class="form-input w-100" type="text" placeholder="San Diego">
+          <input id="search-input" class="form-input w-100 custom-search" type="text" placeholder="San Diego">
         </div>
         <br>
         <div><button type="button" class="btn btn-primary w-100">Search</button></div>
@@ -39,27 +40,61 @@
 
       </div>
 
+      <!-- Current city weather data -->
       <div class="col-9 custom-line-height">
         <div class="border border-dark custom-border">
           <div id="citySearched date-today" class="font-weight-bold">Austin (7/5/2022)</div>
           <div id="icon"></div>
-          <div>Temp:<span id="temp">95.5</span> &#8457;</div>
-          <div>Wind:<span id="wind">12.66</span>MPH</div>
-          <div>Humidity:<span id="humidity">48</span>&#37</div>
-          <div>UV Index:<span id="uvIndex">11.17</span></div>
+          <div>Temp: <span id="temp">95.5</span> &#8457;</div>
+          <div>Wind: <span id="wind">12.66</span> MPH</div>
+          <div>Humidity: <span id="humidity">48</span>&#37</div>
+          <div>UV Index: <span id="uvIndex">11.17</span></div>
         </div>
       </div>
 
     </div>
 
+     <!-- 5 day forecast will go here -->
     <div class="row">
-      <div class="col-3">
-        <!-- Empty column -->
-      </div>
-      <div class="col-9">
-        <!-- 5 day forecast will go here -->
-        <!-- possibly new row with columns -->
-        
+      <div class="col-9 offset-3 custom-line-height">
+        <div class="row justify-content-between custom-five-day">
+          <div class="col-2 day text-white">
+            <div id="date-1">7/6/2022</div>
+            <div id="icon-1"></div>
+            <div>Temp: <span id="temp-1">95.5</span> &#8457;</div>
+            <div>Wind: <span id="wind-1">12.66</span> MPH</div>
+            <div>Humidity: <span id="humidity-1">48</span>&#37</div>
+          </div>
+          <div class="col-2 day text-white">
+            <div id="date-2">7/7/2022</div>
+            <div id="icon-2"></div>
+            <div>Temp: <span id="temp-2">95.5</span> &#8457;</div>
+            <div>Wind: <span id="wind-2">12.66</span> MPH</div>
+            <div>Humidity: <span id="humidity-2">48</span>&#37</div>
+          </div>
+          <div class="col-2 day text-white">
+            <div id="date-3">7/8/2022</div>
+            <div id="icon-3"></div>
+            <div>Temp: <span id="temp-3">95.5</span> &#8457;</div>
+            <div>Wind: <span id="wind-3">12.66</span> MPH</div>
+            <div>Humidity: <span id="humidity-3">48</span>&#37</div>
+          </div>
+          <div class="col-2 day text-white">
+            <div id="date-4">7/9/2022</div>
+            <div id="icon-4"></div>
+            <div>Temp: <span id="temp-4">95.5</span> &#8457;</div>
+            <div>Wind: <span id="wind-4">12.66</span> MPH</div>
+            <div>Humidity: <span id="humidity-4">48</span>&#37</div>
+          </div>
+          <div class="col-2 day text-white">
+            <div id="date-5">7/10/2022</div>
+            <div id="icon-5"></div>
+            <div>Temp: <span id="temp-5">95.5</span> &#8457;</div>
+            <div>Wind: <span id="wind-5">12.66</span> MPH</div>
+            <div>Humidity: <span id="humidity-5">48</span>&#37</div>
+          </div>
+        </div>
+      
       </div>
 
     </div>

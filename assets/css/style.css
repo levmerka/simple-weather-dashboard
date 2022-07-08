@@ -5,7 +5,22 @@
 /* Element Selectors */
 
 /* Class Selectors */
+.custom-header {
+    background-color: blue;
+    padding: 15px 0 5px 0;
+}
+
+.custom-line-height {
+    line-height: 50px;
+}
+
+.custom-border {
+    padding: 15px;
+    margin-top: 10px;
+}
+
 
 /* ID Selectors */
+
 
 /* Media Queries */

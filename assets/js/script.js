@@ -11,101 +11,49 @@
 
 var apiKey = '8e20102d29e5d9929745e4fb83d08bf0';
 var geoApiKey = 'dfd697bcf6cd03b3322cd98dd7c32990';
-var userSearch = 'Austin';
-// var weatherAPIUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`
-// var geoAPIurl = `http://api.openweathermap.org/geo/1.0/direct?q=${userSearch}&limit=5&appid=${geoApiKey}`
+var btnEl = document.getElementById('searchBtn');
+// var userSearch = document.getElementById('search-input').value;
+// var userSearch = document.querySelector('input').value;
+// var userSearch = 'Austin';
+
+// var userSearch = searchBox.value;
+
+var lat;
+var lon;
 // var fiveDayAPIUrl = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`
 
-// Value from search form
-// var lat;
-// var lon;
-// document.getElementById("#searchTerm").value
+
 function getLatLon() {
-    // var weatherAPIUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`
+    event.preventDefault();
+    var userSearch = document.getElementById('search-input').value;
     var geoAPIurl = `http://api.openweathermap.org/geo/1.0/direct?q=${userSearch}&limit=5&appid=${geoApiKey}`
-    var lat;
-    var lon;
+
+    console.log(userSearch, 'is this working');
     fetch(geoAPIurl)
         .then(function (response) {
             return response.json();
-        }).then(function (data) {
-            console.log(data);
-            console.log("lat", data[0].lat)
-            console.log("lon", data[0].lon)
-            lat = data[0].lat;
-            lon = data[0].lon;
-        
-            then(function() {
-                var weatherAPIUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`
-                fetch(weatherAPIUrl)
-                    .then(function (response) {
-                        return response.json();
-                    }).then(function (data) {
-                        console.log(data);
-                        // APPEND TO PAGE   
-                    })
-            });
-            
+        })
+        .then(function (data) {
+            console.log(data, 'city info or something');
+            // console.log("lat", data[0].lat)
+            // console.log("lon", data[0].lon)
+            lat = data[0].lat
+            lon = data[0].lon
+
+            fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=8e20102d29e5d9929745e4fb83d08bf0')
+                .then(function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    console.log(data, 'the other fetch');
+                    // APPEND TO PAGE   
+                })
+
         })
 };
 
-getLatLon();
+// getLatLon();
 
 
-// function currentForecast() {
-//     fetch(weatherAPIUrl)
-//         .then(function (response) {
-//             return response.json();
-//         }).then(function (data) {
-//             console.log(data);
-//             // APPEND TO PAGE   
-//         })
-// };
 
-// currentForecast();
-
-// function uvIndex(){
-//     fetch(weatherAPIUrl)
-//         .then(function (response) {
-//             return response.json();
-//         }).then(function (data) {
-//             console.log(data);
-//             // APPEND TO PAGE   
-//         })
-// };
-
-// var testURL3 = `http://api.openweathermap.org/geo/1.0/direct?q=${userSearch}&limit=5&appid=${geoApiKey}`
-
-
-// function getTestLatLon() {
-
-//     fetch(testURL3)
-//         .then(function (response) {
-//             return response.json();
-//         }).then(function (data) {
-//             console.log(data);
-//             console.log("lat", data[0].lat)
-//             console.log("lon", data[0].lon)
-//             lat = data[0].lat
-//             lon = data[0].lon
-//             currentForecast();
-//         })
-// };
-
-// getTestLatLon();
-
-// testURL2 and testFunction WORKS!
-// var testURL2 = `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&&exclude=hourly,daily&appid=${apiKey}`
-
-// function testFunction() {
-//     fetch(testURL2)
-//         .then(function (response) {
-//             return response.json();
-//         }).then(function (data) {
-//             console.log(data);
-//             // APPEND TO PAGE   
-//         })
-// };
-
-// testFunction();
-
+btnEl.addEventListener('click', getLatLon);
+// btnEl.onclick = getLatLon();

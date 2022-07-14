@@ -38,6 +38,14 @@ var windFive = document.querySelector('#wind-5');
 var humidityFive = document.querySelector('#humidity-5');
 
 var cityEl = document.querySelector('#citySearched');
+var todayEl = document.querySelector('#date-today');
+
+var dayOneEl = document.querySelector('#date-1');
+var dayTwoEl = document.querySelector('#date-2');
+var dayThreeEl = document.querySelector('#date-3');
+var dayFourEl = document.querySelector('#date-4');
+var dayFiveEl = document.querySelector('#date-5');
+
 
 //function to get weather data
 function getLatLon() {
@@ -67,6 +75,31 @@ function getLatLon() {
                 }).then(function (data) {
                     console.log(data, 'the other fetch');
                     // APPEND TO PAGE   
+                    //date
+                    var currentDate = new Date(data.current.dt * 1000).toLocaleDateString("en", { weekday: "long", month: "long", day: "numeric", year: "numeric"});
+    console.log(currentDate);
+                    todayEl.textContent = currentDate;
+
+    //                 var dateOne = new Date(data[0].dt * 1000).toLocaleDateString("en", { month: "long", day: "numeric", year: "numeric" });
+    // console.log(dateOne);
+    //                 dayOneEl.textContent = dateOne;
+
+    //                 var dateTwo = new Date(data[1].current.dt * 1000).toLocaleDateString("en", { weekday: "long", month: "long", day: "numeric", year: "numeric"});
+    // console.log(dateTwo);
+    //                 dayTwoEl.textContent = dateTwo;
+
+    //                 var dateThree = new Date(data[2].current.dt * 1000).toLocaleDateString("en", { weekday: "long", month: "long", day: "numeric", year: "numeric"});
+    // console.log(dateThree);
+    //                 dayThreeEl.textContent = dateThree;
+
+    //                 var dateFour = new Date(data[3].current.dt * 1000).toLocaleDateString("en", { weekday: "long", month: "long", day: "numeric", year: "numeric"});
+    // console.log(dateFour);
+    //                 dayFourEl.textContent = dateFour;
+
+    //                 var dateFive = new Date(data[4].current.dt * 1000).toLocaleDateString("en", { weekday: "long", month: "long", day: "numeric", year: "numeric"});
+    // console.log(dateFive);
+    //                 dayFiveEl.textContent = dateFive;
+
                     todayTemp.textContent = data.current.temp;
                     console.log('ferenheit', data.current.temp);
                     todayWind.textContent = data.current.wind_speed;

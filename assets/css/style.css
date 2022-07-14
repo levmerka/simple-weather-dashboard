@@ -44,12 +44,42 @@
 .day {
     background-color: darkblue;
 }
-/* ID Selectors */
-#uvIndex {
+
+.custom-small-text{
+    font-size: 13px;
+}
+
+.lowUV {
+    background: rgb(137, 156, 137);
+    padding: 5px;
+    color: white;
+}
+
+.modUV {
+    background: rgb(248, 216, 4);
+    padding: 5px;
+    color: white;
+}
+
+.hiUV {
+    background-color: orange;
+    padding: 5px;
+    color: white;
+}
+
+.vhiUV {
     background-color: red;
     padding: 5px;
     color: white;
 }
+
+.exUV {
+    background-color: rgb(147, 55, 154);
+    padding: 5px;
+    color: white;
+}
+
+/* ID Selectors */
 
 
 /* Media Queries */

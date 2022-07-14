@@ -7,7 +7,7 @@
 ---
 ## How it works
 Go to deployed website, enter desired city and click search button.
-![Step-1 Screenshot](./assets/images/step-1.png)<br><br>
+![Step-1 Screenshot](./assets/images/Step-1.png)<br><br>
 Current weather data will be displayed as well as a 5-day forecast. The UV index will be color coded according to UV range exposure category.
 ![Step-1 Screenshot](./assets/images/step-2.png)<br><br>
 
